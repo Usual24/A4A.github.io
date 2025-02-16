@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>A4A stream</title>
+</head>
+<body>
+    <video id="localVideo" autoplay playsinline></video>
+    <button onclick="startScreenShare()">화면 공유 시작</button>
+    <script>
+        async function startScreenShare() {
+            const stream = await navigator.mediaDevices.getDisplayMedia({ video: true, audio: true });
+            document.getElementById('localVideo').srcObject = stream;
+        }
+    </script>
+</body>
+</html>
